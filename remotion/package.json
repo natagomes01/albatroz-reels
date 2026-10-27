@@ -1,0 +1,22 @@
+{
+  "name": "albatroz-reels-remotion",
+  "private": true,
+  "scripts": {
+    "studio:motion-hook": "remotion studio projects/261018-catolico-exodo-20-hook/src/index.ts --public-dir=$HOME/dev/albatroz-media/remotion/261018-catolico-exodo-20-hook",
+    "studio:long-cut": "remotion studio projects/261025-catolico-eleicao/src/index.ts --public-dir=$HOME/dev/albatroz-media/remotion/261025-catolico-eleicao"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.451",
+    "@remotion/google-fonts": "^4.0.451",
+    "@remotion/player": "^4.0.451",
+    "@remotion/renderer": "^4.0.451",
+    "remotion": "^4.0.451",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "zod": "4.3.6"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.0",
+    "typescript": "^5.0.0"
+  }
+}

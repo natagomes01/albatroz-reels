@@ -1,0 +1,11 @@
+{"type": "result", "subtype": "success", "is_error": false, "duration_ms": 4210,
+ "duration_api_ms": 3890, "num_turns": 1, "result": "{\"n\":5}", "structured_output": {"n": 5},
+ "total_cost_usd": 0.01351,
+ "usage": {"input_tokens": 9, "cache_creation_input_tokens": 6648, "cache_read_input_tokens": 0,
+           "output_tokens": 41, "output_tokens_details": {"thinking_tokens": 34},
+           "server_tool_use": {"web_search_requests": 0}, "service_tier": "standard"},
+ "modelUsage": {"claude-haiku-4-5": {"inputTokens": 9, "outputTokens": 41,
+                                     "cacheReadInputTokens": 0, "cacheCreationInputTokens": 6648,
+                                     "costUSD": 0.01351, "thinkingTokens": 34,
+                                     "canonicalModel": "claude-haiku-4-5",
+                                     "provider": "firstParty", "costBasis": "list"}}}

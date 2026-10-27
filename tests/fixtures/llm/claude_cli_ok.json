@@ -1,0 +1,2 @@
+{"type": "result", "subtype": "success", "is_error": false, "result": "{\"n\":7}", "structured_output": {"n": 7},
+ "usage": {"input_tokens": 1200, "output_tokens": 40}, "total_cost_usd": 0.0}

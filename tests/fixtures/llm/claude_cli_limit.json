@@ -1,0 +1,2 @@
+{"type": "result", "subtype": "error_during_execution", "is_error": true,
+ "result": "You've hit your limit · resets 3pm (America/Sao_Paulo)", "usage": {"input_tokens": 0, "output_tokens": 0}}

@@ -1,0 +1,29 @@
+# API list prices, USD per million tokens (S4 spec 3). The anthropic-api and openai-compatible
+# backends compute each call's cost from this table; for claude-cli the cost `claude -p` reports
+# is used and this table is a cross-check (a difference above 10% prints a warning).
+# A list-price estimate, not a bill. Refill from the official Anthropic price list
+# (https://platform.claude.com/docs/en/about-claude/pricing, or the claude-api skill) and update
+# verified_on and source when you do. A model missing here simply gets no table cost.
+verified_on = "2026-09-30"
+source = "https://platform.claude.com/docs/en/about-claude/pricing.md, model pricing table, read 2026-09-30 (haiku-4-5, sonnet-5, opus-5-5 all match the claude-api skill table cached 2026-09-25); cache writes 1.25x input (5 min) and 2x input (1 h); cache reads 0.1x input, 0.05x on opus-5-5"
+
+[models.claude-haiku-4-5]
+input = 1.00
+output = 5.00
+cache_write_5m = 1.25
+cache_write_1h = 2.00
+cache_read = 0.10
+
+[models.claude-sonnet-5]
+input = 2.00
+output = 10.00
+cache_write_5m = 2.50
+cache_write_1h = 4.00
+cache_read = 0.20
+
+[models.claude-opus-5-5]
+input = 4.00
+output = 20.00
+cache_write_5m = 5.00
+cache_write_1h = 8.00
+cache_read = 0.20

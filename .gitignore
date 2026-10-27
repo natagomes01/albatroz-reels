@@ -1,0 +1,31 @@
+# video and audio never enter Git (spec 4.4)
+*.mp4
+*.mov
+*.m4a
+*.wav
+*.mkv
+*.webm
+*.mp3
+*.MOV
+*.MP4
+media/
+# jobs hold per-class text artifacts; only the hand-written decisions are versioned
+jobs/**
+!jobs/*/
+!jobs/*/review.json
+!jobs/.gitkeep
+
+.venv/
+__pycache__/
+.pytest_cache/
+.env
+
+# macOS
+.DS_Store
+
+# brainstorm mockups (superpowers visual companion)
+.superpowers/
+
+# Remotion workspace (remotion/): dependencies; renders go to the media root
+node_modules/
+out/

@@ -1,0 +1,14 @@
+# One table per channel (spec 1, 4.5). brand_dir is the channel's profile folder: icp.md and
+# audience.md are required, captions.md and memory/*.md are optional. Start a new one by copying
+# profiles/_template/ (the new-channel skill does it with you). catholic-br is the author's channel,
+# kept as a worked example.
+
+[channels.catholic-br]
+language = "pt"
+brand_dir = "profiles/catholic-br"
+glossary = "Agostinho, deuterocanônicos, Denzinger, Magistério, Eucaristia, Septuaginta"
+
+# [channels.my-channel]
+# language = "pt"            # the language the captions are written in
+# brand_dir = "profiles/my-channel"
+# glossary = "names and terms the speech-to-text tends to mishear, comma-separated"

@@ -1,0 +1,89 @@
+# App-wide settings (spec 4.2, 4.4, 4.6). Paths are relative to this file unless absolute.
+# The media root holds masters, renders and models, never Git. A path under /Volumes is refused
+# while that share is not mounted. final_dir holds only the videos ready to post.
+media_root = "~/dev/albatroz-media"
+final_dir = "~/dev/albatroz-media/final"
+jobs_dir = "jobs"
+scan_threshold = 60
+scan_ceiling = 40   # above this many qualifying windows, analyze asks before sending them all to detail
+
+[transcreve]
+python = "/usr/bin/python3"
+script = "~/dev/transcreve/transcreve.py"
+
+# Windows: these replace the keys above when sys.platform is "win32".
+# A table merges one level deep. Encoder and detector: SHORTS_ENCODER, SHORTS_DETECTOR (README).
+[platform.win32]
+media_root = "C:/albatroz/media"
+final_dir = "C:/albatroz/media/final"
+
+[platform.win32.transcreve]
+python = "python"
+script = "C:/albatroz/dev/transcreve/transcreve.py"
+
+[platform.win32.dereverb]
+model_dir = "C:/albatroz/media/models"
+separator = "C:/albatroz/programs/audio-separator/Scripts/audio-separator.exe"
+
+[backup]
+auto = false
+remote = "gdrive:albatroz-media-backup"
+
+# Dereverb (S8 audio spec): UVR strengths offered on the review page; 0 = off.
+# UVR runs from its own uv tool install (documentation/runbooks/new-machine-setup.md).
+[dereverb]
+levels = [0, 10, 20, 30]
+model = "UVR-DeEcho-DeReverb.pth"
+model_dir = "~/dev/albatroz-media/models"
+separator = "~/.local/bin/audio-separator"
+excerpt_seconds = 20
+
+# B-roll (S8B spec 3, 4, 8, 9). Commons asks for a User-Agent with contact details: set yours.
+[broll]
+user_agent = "albatroz-shorts (set your contact here)"   # doctor warns until you put your e-mail here
+candidates = 6
+min_fill_px = 1080
+max_still_px = 4096
+thumb_width = 320
+pan_px_per_s = 40
+split_face_y = 1250
+insert_max_s = 10.0
+max_inserts = 3
+max_share = 0.50
+head_s = 3.0
+tail_s = 2.0
+upload_max_mb = 200
+
+[backends.scan]
+backend = "claude-cli"
+model = "claude-haiku-4-5"
+
+[backends.detail]
+backend = "claude-cli"
+model = "claude-opus-5-5"
+
+# Both reviews (blind and faithful) use this backend.
+[backends.review]
+backend = "claude-cli"
+model = "claude-sonnet-5"
+
+# Caption context pass (caption spec 4.2, 9): fixes misheard words after the analysis.
+[backends.caption_fix]
+backend = "claude-cli"
+model = "claude-sonnet-5"
+
+[backends.class_sheet]
+backend = "claude-cli"
+model = "claude-haiku-4-5"
+
+# B-roll suggestion (S8B spec 5): reads the clip's words only, never an image.
+[backends.broll]
+backend = "claude-cli"
+model = "claude-haiku-4-5"
+
+# Example for other providers (not active):
+# [backends.detail]
+# backend = "openai-compatible"
+# model = "gpt-5"
+# base_url = "https://api.openai.com/v1"
+# key_service = "openai-api"

@@ -1,0 +1,2 @@
+{"type": "result", "subtype": "success", "is_error": false, "result": "{\"n\": 8}",
+ "usage": {"input_tokens": 900, "output_tokens": 12}}

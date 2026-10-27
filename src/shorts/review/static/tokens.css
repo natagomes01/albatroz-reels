@@ -1,0 +1,106 @@
+/* Albatroz tokens for the review page (S6 spec, section 4).
+   Brand values copied from ~/dev/studio/brand/design-sys/colors_and_type.css on 30/09/2026.
+   Our extensions, not in the design system: every dark value, --c-brick and --c-brick-light
+   (rejected), --c-amber, --c-amber-light (warnings), --c-card-dark, --c-stage-dark, --tint-in-cut, --space-3xs, --z-*, --stripe-h,
+   --content-max. style.css must use only the names defined here, never a raw color. */
+
+@font-face { font-family: "Anton"; src: url("/fonts/Anton-Regular.ttf") format("truetype");
+             font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Raleway"; src: url("/fonts/Raleway-Variable.ttf") format("truetype");
+             font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "IBM Plex Mono"; src: url("/fonts/IBMPlexMono-Regular.ttf") format("truetype");
+             font-weight: 400; font-style: normal; font-display: swap; }
+
+:root {
+  --c-army: #696858;
+  --c-offwhite: #F2EDE4;
+  --c-charcoal: #202020;
+  --c-slate: #5F6870;
+  --c-paper: #FCFCFC;
+  --c-dark-4: #A8A8A8;
+  --c-medium-2: #7A7A68;
+  --c-medium-3: #989880;
+  --c-accent-500: #F04500;
+  --c-accent-400: #F07040;
+  --c-brick: #9A3324;
+  --c-brick-light: #DD7A63;
+  --c-card-dark: #2B2B28;
+  --c-stage-dark: #141413;
+  --c-amber: #8A5A00;
+  --c-amber-light: #E0A43A;
+
+  --bg-page: var(--c-offwhite);
+  --bg-card: var(--c-paper);
+  --bg-stage: var(--c-charcoal);
+  --fg-default: var(--c-charcoal);
+  --fg-muted: var(--c-slate);
+  --fg-on-stage: var(--c-offwhite);
+  --border-quiet: rgb(32 32 32 / 12%);
+  --border-strong: var(--c-charcoal);
+  --accent: var(--c-accent-500);
+  --accent-hover: var(--c-accent-400);
+  --status-approved: var(--c-army);
+  --status-rejected: var(--c-brick);
+  --warn: var(--c-amber);
+  --tint-in-cut: rgb(105 104 88 / 14%);
+  --primary-bg: var(--c-army);
+  --primary-fg: var(--c-offwhite);
+  --primary-hover: var(--c-medium-2);
+
+  --font-headline: "Anton", "Helvetica Neue", Impact, sans-serif;
+  --font-body: "Raleway", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --space-3xs: 4px;
+  --space-xxs: 8px;
+  --space-xs: 16px;
+  --space-s: 24px;
+  --space-m: 40px;
+  --space-l: 64px;
+  --r-none: 0;
+  --r-sm: 2px;
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur-fast: 140ms;
+  --dur-base: 220ms;
+  --z-stage: 10;
+  --z-stripe: 100;
+  --stripe-h: 7px;
+  --content-max: 1200px;
+
+  color-scheme: light dark;
+}
+
+:root[data-theme="light"] { color-scheme: light; }
+
+/* SYSTEM on a dark Mac. Keep this block identical to the forced DARK block below. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+  --bg-page: var(--c-charcoal);
+  --bg-card: var(--c-card-dark);
+  --bg-stage: var(--c-stage-dark);
+  --fg-default: var(--c-offwhite);
+  --fg-muted: var(--c-dark-4);
+  --border-quiet: rgb(242 237 228 / 12%);
+  --border-strong: var(--c-offwhite);
+  --status-approved: var(--c-medium-3);
+  --status-rejected: var(--c-brick-light);
+  --warn: var(--c-amber-light);
+  --tint-in-cut: rgb(152 152 128 / 10%);
+  }
+}
+
+/* Forced DARK, whatever the Mac says. */
+:root[data-theme="dark"] {
+  --bg-page: var(--c-charcoal);
+  --bg-card: var(--c-card-dark);
+  --bg-stage: var(--c-stage-dark);
+  --fg-default: var(--c-offwhite);
+  --fg-muted: var(--c-dark-4);
+  --border-quiet: rgb(242 237 228 / 12%);
+  --border-strong: var(--c-offwhite);
+  --status-approved: var(--c-medium-3);
+  --status-rejected: var(--c-brick-light);
+  --warn: var(--c-amber-light);
+  --tint-in-cut: rgb(152 152 128 / 10%);
+  color-scheme: dark;
+}

@@ -1,0 +1,30 @@
+{
+ "bodyFrames": 3572,
+ "items": [
+  {
+   "from": 1174,
+   "to": 1302,
+   "text": "76 VERSÍCULOS",
+   "y": 300
+  },
+  {
+   "from": 1332,
+   "to": 1500,
+   "text": "1Cr 28,19",
+   "y": 300,
+   "color": "yellow"
+  },
+  {
+   "from": 1530,
+   "to": 1635,
+   "text": "22 SÓ EM ÊXODO",
+   "y": 300
+  },
+  {
+   "from": 2438,
+   "to": 2544,
+   "text": "COMENTE IMAGENS",
+   "y": 300
+  }
+ ]
+}

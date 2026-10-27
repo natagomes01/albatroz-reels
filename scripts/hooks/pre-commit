@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Blocks media files and anything over 5 MB from being committed (spec 4.4).
+set -euo pipefail
+max=$((5 * 1024 * 1024))
+status=0
+while IFS= read -r -d '' f; do
+  lower=$(printf '%s' "$f" | tr '[:upper:]' '[:lower:]')
+  case "$lower" in
+    *.mp4|*.mov|*.m4a|*.wav|*.mkv|*.webm|*.mp3)
+      echo "pre-commit: media file blocked: $f (media lives in the media root)" >&2
+      status=1
+      continue
+      ;;
+  esac
+  size=$(git cat-file -s ":$f")
+  if [ "$size" -gt "$max" ]; then
+    echo "pre-commit: $f is $((size / 1024 / 1024)) MB (limit 5 MB)" >&2
+    status=1
+  fi
+done < <(git diff --cached --name-only --diff-filter=ACMR -z)
+exit $status

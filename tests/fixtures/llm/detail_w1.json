@@ -1,0 +1,17 @@
+{"candidates": [
+  {"segments": [{"window_id": "w1", "first_words": "p2q0 p2q1 p2q2 p2q3 p2q4 p2q5",
+                 "last_words": "p8q4 p8q5 p8q6 p8q7 p8q8 p8q9."}],
+   "out_of_order": false, "title": "Moisés escreveu tudo?", "hook": "Se foi Moisés...",
+   "scores": {"hook": {"score": 8, "why": "question hook"}, "value": {"score": 7, "why": "sourced"},
+              "conversation": {"score": 9, "why": "authorship dispute"},
+              "emotion": {"score": 6, "why": "mild indignation"}},
+   "controversy": {"level": 1, "why": "disputed, not insulting"},
+   "who_reacts": "Protestant scholar fans, will cite documentary hypothesis",
+   "emphasis": ["p5q0 p5q1 p5q2"], "hook_id": "moses"},
+  {"segments": [{"window_id": "w1", "first_words": "nothing like this exists here",
+                 "last_words": "p9q4 p9q5 p9q6 p9q7 p9q8 p9q9."}],
+   "out_of_order": false, "title": "ghost", "hook": "x",
+   "scores": {"hook": {"score": 1, "why": ""}, "value": {"score": 1, "why": ""},
+              "conversation": {"score": 1, "why": ""}, "emotion": {"score": 1, "why": ""}},
+   "controversy": {"level": 0, "why": ""}, "who_reacts": "", "emphasis": ["x"], "hook_id": "g"}
+]}

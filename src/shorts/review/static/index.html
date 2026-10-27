@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Shorts review</title>
+  <script src="/static/theme.js"></script>
+  <link rel="preload" href="/fonts/Raleway-Variable.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/static/tokens.css">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="top-stripe" aria-hidden="true"></div>
+  <header>
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <div>
+        <h1 id="title">Shorts review</h1>
+        <div class="summary-row">
+          <div id="summary"></div>
+          <button type="button" id="render-all" disabled>render all (0)</button>
+        </div>
+      </div>
+    </div>
+    <div id="theme-menu">
+      <button type="button" id="theme-toggle" aria-label="Theme" title="Theme" aria-haspopup="true" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/>
+        </svg>
+      </button>
+      <div id="theme" role="group" aria-label="Theme" hidden>
+        <button type="button" data-theme="light">Light</button>
+        <button type="button" data-theme="dark">Dark</button>
+        <button type="button" data-theme="system">System</button>
+      </div>
+    </div>
+  </header>
+  <section id="audio" hidden aria-label="Audio strength"></section>
+  <section id="stage">
+    <video id="player" src="/media/master" preload="metadata" controls></video>
+    <div id="now-playing">Click ▶ on a card to play its segments.</div>
+  </section>
+  <main id="cards"></main>
+  <details id="dropped"><summary>Dropped candidates</summary><div id="dropped-cards"></div></details>
+  <script src="/static/app.js"></script>
+  <script src="/static/broll.js"></script>
+</body>
+</html>
